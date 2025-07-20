@@ -19,7 +19,7 @@ const { userAuth } = require("./Middlewares/userAuth");
 const app = express();
 
 app.use(cors({
-     origin: "http://localhost:5173",
+     origin: "https://dhansetu-frontend.onrender.com",
     credentials: true,
 }));
 app.use(cookieParser());
