@@ -9,7 +9,7 @@ const TopBar = () => {
   const [cookies, removeCookie] = useCookies([]);
   const Logout = async () => {
     try {
-      await axios.post("http://localhost:3002/logout", {}, { withCredentials: true });
+      await axios.post("https://dhansetu-backend.onrender.com/logout", {}, { withCredentials: true });
       removeCookie("token");
       navigate("/login");
     } catch (error) {
