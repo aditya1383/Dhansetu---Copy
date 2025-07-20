@@ -57,7 +57,7 @@ const DashBoard = () => {
         return;
       }
       try {
-      const { data } = await axios.post("onrender.com/newOrder", {}, { withCredentials: true });
+      const { data } = await axios.post("https://dhansetu-backend.onrender.com", {}, { withCredentials: true });
       const { status, user } = data;
 
       if (status) {
