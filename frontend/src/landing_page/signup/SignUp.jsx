@@ -39,7 +39,7 @@ const SignUp = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.post("http://localhost:3002/signup", {
+            const { data } = await axios.post("https://dhansetu-backend.onrender.com/signup", {
                 ...inputValue
             }, {
                 withCredentials: true
