@@ -22,7 +22,7 @@ const Orders = () => {
   const [orderSignal, setAllOrderSignal] = useState(false) // to refresh the page
 
   useEffect(() => {
-    axios.get("http://localhost:3002/allOrders", { withCredentials: true }).then((res) => {
+    axios.get("https://dhansetu-backend.onrender.com/allOrders", { withCredentials: true }).then((res) => {
       console.log(res.data);
       setAllOrders(res.data);
     })
