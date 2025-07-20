@@ -7,7 +7,7 @@ const ProtectedRoute = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.post("http://localhost:3002", {}, { withCredentials: true })
+    axios.post("https://dhansetu-backend.onrender.com", {}, { withCredentials: true })
       .then((res) => {
         setAuthorized(res.data.status);
       })
