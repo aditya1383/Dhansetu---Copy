@@ -57,7 +57,7 @@ const DashBoard = () => {
         return;
       }
       try {
-      const { data } = await axios.post("http://localhost:3002", {}, { withCredentials: true });
+      const { data } = await axios.post("onrender.com/newOrder", {}, { withCredentials: true });
       const { status, user } = data;
 
       if (status) {
