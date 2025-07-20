@@ -18,7 +18,7 @@ import AboutPage from './landing_page/about/AboutPage';
 import ProductPage from './landing_page/product/ProductPage';
 import SupportPage from './landing_page/support/SupportPage';
 import NotFound from './landing_page/NotFound.jsx';
-import SignUp from './landing_page/signup/Signup';
+import SignUp from './landing_page/signup/SignUp.jsx';
 import Login from './landing_page/signup/Login.jsx';
 
 
