@@ -146,7 +146,7 @@ const BuyActionWindow = ({ uid,prevPrice }) => {
   const { closeBuyWindow } = useContext(GeneralContext);
 
   const handleBuyClick = async () => {
-   const response = await axios.post("http://localhost:3002/newOrder", {
+   const response = await axios.post("https://dhansetu-backend.onrender.com/newOrder", {
       name: uid,
       qty: stockQuantity,
       price: stockPrice,
