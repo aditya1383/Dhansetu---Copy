@@ -23,7 +23,7 @@ const Holdings = () => {
   const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
-    axios.get("http://localhost:3002/allHoldings", { withCredentials: true }).then((res) => {
+    axios.get("https://dhansetu-backend.onrender.com/allHoldings", { withCredentials: true }).then((res) => {
       console.log(res.data);
       setAllHoldings(res.data);
     })
