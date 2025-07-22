@@ -18,10 +18,19 @@ module.exports.signup = async (req, res, next) => {
         const user = await User.create({email, password, username, createdAt});
         const token = createSecretToken(user._id);
         // console.log("Generated token", token);
+        // at deploy
+      //   res.cookie("token", token, {
+      //       withCredentials: true,
+      // httpOnly: false,
+      //   });
+
+        // after deploy
         res.cookie("token", token, {
-            withCredentials: true,
-      httpOnly: false,
-        });
+  httpOnly: true,
+  secure: true,
+  sameSite: "None",
+});
+
 
         res.status(201).json({message:"USer signed in Successfully", success:true, user});
         next();
@@ -49,13 +58,22 @@ module.exports.Login = async (req, res, next) => {
         }
 
         const token = createSecretToken(user._id);
+      //   res.cookie("token", token, {
+      //       withCredentials:true,
+      //       // httpOnly: false,
+      //        httpOnly: true,
+      // sameSite: "lax",
+      // secure: false,
+      //   });
+
+        // after deploy
         res.cookie("token", token, {
-            withCredentials:true,
-            // httpOnly: false,
-             httpOnly: true,
-      sameSite: "lax",
-      secure: false,
-        });
+  httpOnly: true,
+  secure: true,
+  sameSite: "None",
+});
+
+        
 
         res.status(201).json({message:"User loggedin successfully", success:true});
         next()
