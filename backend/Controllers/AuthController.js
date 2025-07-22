@@ -33,7 +33,8 @@ module.exports.signup = async (req, res, next) => {
 
 
         res.status(201).json({message:"USer signed in Successfully", success:true, user});
-        next();
+        // before deploy
+        // next();
     } catch(err) {
         console.error(err);
     }
@@ -76,7 +77,8 @@ module.exports.Login = async (req, res, next) => {
         
 
         res.status(201).json({message:"User loggedin successfully", success:true});
-        next()
+        // before delpy
+        // next()
     } catch (error) {
         console.log(error);
     }
