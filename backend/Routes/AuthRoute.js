@@ -8,10 +8,20 @@ router.post('/login', Login);
 router.post('/',userVerification);
 
 router.post("/logout", (req, res) => {
-  res.clearCookie("token", {
-    sameSite: "lax",
-    secure: false,         // match original cookie settings
-  });
+
+  // before deploy
+  // res.clearCookie("token", {
+  //   sameSite: "lax",
+  //   secure: false,         // match original cookie settings
+  // });
+
+  // after deploy
+  res.cookie("token", token, {
+  httpOnly: true,
+  secure: true,
+  sameSite: "None",
+});
+
   res.status(200).json({ message: "Logged out" });
 });
 
