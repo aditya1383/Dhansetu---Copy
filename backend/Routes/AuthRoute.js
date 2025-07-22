@@ -16,11 +16,12 @@ router.post("/logout", (req, res) => {
   // });
 
   // after deploy
-  res.cookie("token", token, {
+  res.clearCookie("token", {
   httpOnly: true,
   secure: true,
   sameSite: "None",
 });
+
 
   res.status(200).json({ message: "Logged out" });
 });
